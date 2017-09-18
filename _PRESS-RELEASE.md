@@ -17,14 +17,14 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  DIY Show Bulleten Board
+  DIY Show Bulletin Board
 
 ## Sub-Heading ##
-  This is an online bulleten board for the posting and discussion of DIY show flyers that should be similar in purpose to a bulleten board at a record store.
+  This is an online bulletin board for the posting and discussion of DIY show flyers that should be similar in purpose to a bulletin board at a record store.
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
-  The benefit of this product is that it allows users to find out about the same kinds of shows they would find out about on the bulleten boards of record stores. This is information that is often hard to find online, and without the word of mouth and obtaining of physical flyers, it is often impossible.
+  The benefit of this product is that it allows users to find out about the same kinds of shows they would find out about on the bulletin boards of record stores. This is information that is often hard to find online, and without the word of mouth and obtaining of physical flyers, it is often impossible.
 
 ## Problem ##
   The problem is that it is often hard to find information about DIY shows on the internet. This app would show you flyers for DIY shows in one unified place. 
@@ -33,7 +33,7 @@ Once the project moves into development, the press release can be used as a touc
   The product elegantly solves the problem by putting a number of show flyers in one place. On the internet, they are most oftem found on facebook, where there is no unified way to find all of the similar events and view them in one place.
 
 ## Quote from You ##
-  "Bulleten Board: Helping you find DIY shows in your area"
+  "Bulletin Board: Helping you find DIY shows in your area"
 
 ## How to Get Started ##
   Just enter a username, see the posted flyers and discuss them!

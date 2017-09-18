@@ -1,0 +1,19 @@
+{
+  "name": "diy-show-bulletin-board",
+  "version": "1.0.0",
+  "description": "A place to post and discuss DIY show flyers",
+  "main": "/server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daleighan/hrla17-mvp.git"
+  },
+  "author": "Alex Leigh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daleighan/hrla17-mvp/issues"
+  },
+  "homepage": "https://github.com/daleighan/hrla17-mvp#readme"
+}
