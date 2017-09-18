@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ShowEntry from './ShowEntry.jsx';
 
 class ShowList extends Component {
 	constructor(props) {
@@ -6,9 +7,14 @@ class ShowList extends Component {
 	}
 
 	render() {
-		console.log(this.props.shows)
+		const { shows } = this.props;
+		console.log(shows);
 		return (
-			<div>Show List Here </div>
+			<div>
+				{shows.map((show) => {
+					return <ShowEntry /> 
+				})}
+			</div>
 			)
 	}
 }
