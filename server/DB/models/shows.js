@@ -47,9 +47,11 @@ Shows.sync({force: true}).then(() => {
 			location: 'the echoplex',
 			price: 9,
 			ticketLink: 'http://fasdvvv.com/sasdd'
-		})
-	})
-})
+		});
+	});
+});
+
+module.exports = Shows;
 
 
 

@@ -1,8 +1,10 @@
-const Shows = require('../DB/models/shows.js');
+const Shows = require('../DB/models/shows.js')
 const Messages = require('../DB/models/messages.js');
 
 module.exports.getShows = (req, res) => {
-	res.json('test');
+	Shows.findAll().then((shows) => {
+		res.json(shows);
+	})
 }
 
 module.exports.postShow = (req, res) => {

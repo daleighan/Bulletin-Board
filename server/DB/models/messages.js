@@ -23,3 +23,5 @@ Messages.sync({ force: true }).then(() => {
 		});
 	});
 });
+
+module.exports = Messages;
