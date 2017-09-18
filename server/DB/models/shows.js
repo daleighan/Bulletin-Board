@@ -33,20 +33,20 @@ const Shows = DB.define('shows', {
 
 Shows.sync({force: true}).then(() => {
 	return Shows.create({
-		name: 'Nails',
-		flyerUrl: 'http://rrrrasdfv.com/sasd.jpg',
-		date: '9/30/2017',
-		location: 'the echoplex',
-		price: 9,
-		ticketLink: 'http://fasdvvv.com/sasdd'
+		name: 'Damnation AD, Battery',
+		flyerUrl: 'http://hardcoreshowflyers.net/wp-content/uploads/2011/10/10041196.jpg',
+		date: '7/11/2017',
+		location: 'Fort Reno',
+		price: 7,
+		ticketLink: ''
 	}).then(() => {
 		return Shows.create({
-			name: 'Nails2',
-			flyerUrl: 'http://rrrrasdfv.com/sasd.jpg',
-			date: '9/30/2017',
-			location: 'the echoplex',
+			name: "25 Ta Life, Crown of Thornz, Leeway, Murphy's Law",
+			flyerUrl: 'http://hardcoreshowflyers.net/wp-content/uploads/2007/10/10280702-782x1024.jpg',
+			date: '4/22/2017',
+			location: 'Coney Island High 15 St. Marks',
 			price: 9,
-			ticketLink: 'http://fasdvvv.com/sasdd'
+			ticketLink: ''
 		});
 	});
 });
