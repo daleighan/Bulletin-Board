@@ -17,28 +17,30 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+  DIY Show Bulleten Board
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  This is an online bulleten board for the posting and discussion of DIY show flyers that should be similar in purpose to a bulleten board at a record store.
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  The benefit of this product is that it allows users to find out about the same kinds of shows they would find out about on the bulleten boards of record stores. This is information that is often hard to find online, and without the word of mouth and obtaining of physical flyers, it is often impossible.
 
 ## Problem ##
-  > Describe the problem your product solves.
+  The problem is that it is often hard to find information about DIY shows on the internet. This app would show you flyers for DIY shows in one unified place. 
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  The product elegantly solves the problem by putting a number of show flyers in one place. On the internet, they are most oftem found on facebook, where there is no unified way to find all of the similar events and view them in one place.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  "Bulleten Board: Helping you find DIY shows in your area"
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  Just enter a username, see the posted flyers and discuss them!
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  "In the past, I only found out about shows by word of mouth or if I had a physical flyer. Now, I can find them on the internet."
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  Use the app and go to more shows!
+
