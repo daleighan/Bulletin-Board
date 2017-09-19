@@ -5,24 +5,24 @@ class ShowEntry extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-
+			messages: []
 		}
 	}
 
 	filterMessages() {
 		let currentId = this.props.show.id
-		let belongs = function(obj) {
+		let belongs = (obj) => {
 			if (obj.showId === currentId) {
 				return true;
 			}
 			return false;
 		}
 		let filtered = this.props.messages.filter(belongs);
-		console.log('filtered', filtered);
+		this.setState({ messages: filtered});
 	}
 
 	componentDidMount() {
-		this.filterMessages();
+		this.filterMessages.call(this);
 	}
 
 	render() {
@@ -39,7 +39,7 @@ class ShowEntry extends Component {
 				<span className="date-location-price">
 					{date} - {location} - ${price}
 				</span>
-				<MessageBoard messages={messages} sendMessage={sendMessage} show={id} />
+				<MessageBoard messages={this.state.messages} sendMessage={sendMessage} show={id} />
 			</div>
 		)
 	}

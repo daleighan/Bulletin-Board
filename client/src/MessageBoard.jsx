@@ -8,7 +8,6 @@ class MessagBoard extends Component {
 	}
 
 	render() {
-		console.log('test')
 		const { messages, sendMessage, show } = this.props;
 		return (
 			<div>

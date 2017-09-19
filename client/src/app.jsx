@@ -103,7 +103,7 @@ window.exampleMessage =
 [
 	{
 		id: 1,
-		user: "",
+		user: "A message to test",
 		message: "",
 		showId: 1
 	}
