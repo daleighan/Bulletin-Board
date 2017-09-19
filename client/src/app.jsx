@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Axios from 'axios';
-import { Redirect } from 'react-router';
-
 import ShowList from './ShowList.jsx';
 import AddShow from './AddShow.jsx';
 import MessageBoard from './MessageBoard.jsx'
@@ -67,7 +65,7 @@ class App extends Component {
 				message: values.currentMessage,
 				showId: values.currentShow
 			})
-			.then((response) => console.log(response))
+			.then((response) => this.setState({ user: response.data }))
 			.catch((err) => console.log('error', err));
 		}	
 		this.getMessages()
@@ -91,8 +89,11 @@ class App extends Component {
 	}
 
 	componentDidMount() {
+		this.sendMessage({
+			currentMessage: " ",
+			currentShow: 0
+		});
 		setTimeout(this.getMessages.bind(this), 50);
-		this.setState({ user: prompt('What is your username?') })
 		setInterval(this.getMessages.bind(this), 10000);
 		setInterval(this.getShows.bind(this), 10000);
 	}

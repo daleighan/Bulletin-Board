@@ -37,20 +37,19 @@ module.exports.deleteShow = (req, res) => {
 
 module.exports.getMessages = (req, res) => {
 	Messages.findAll().then((messages) => {
-		res.json(messages);
+		res.status(200).json(messages);
 	}).catch((err) => {
 		res.json(err);
 	});
 }
 
 module.exports.postMessage = (req, res) => {
-	console.log(req.body);
 	Messages.create({
 		user: req.body.user,
 		message: req.body.message,
 		showId: req.body.showId
 	}).then((message) => {
-		res.status(201).json(message);
+		res.status(201).json(req.session.user);
 	}).catch((err) => {
 		res.json(err);
 	});
