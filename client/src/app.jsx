@@ -12,7 +12,8 @@ class App extends Component {
 		this.state = {
 			shows: window.exampleShow,
 			messages: window.exampleMessage,
-			user: ''
+			user: '',
+			renderChild: false
 		}
 	}
   
@@ -22,11 +23,12 @@ class App extends Component {
 		.catch((err) => console.log(err));
 	}
 
-	submitShow(showObject) {
+	submitShow(showObject, e) {
 		Axios.post('/shows', showObject)
 		.then((response) => console.log('post successful'))
 		.catch((err) => console.log('error', err));
 		this.getShows();
+		ReactDOM.unmountComponentAtNode(document.getElementById('addForm'));
 	}
 
 	getMessages() {
@@ -50,8 +52,7 @@ class App extends Component {
 	}
 
 	handleAddClick() {
-		console.log('test');
-		ReactDOM.render(<AddShow submitShow={this.submitShow.bind(this)} />, document.getElementById('submitButton'))
+		ReactDOM.render(<AddShow submitShow={this.submitShow.bind(this)} />, document.getElementById('addForm'))
 	}
 
 	componentWillMount() {
@@ -63,6 +64,7 @@ class App extends Component {
 		setTimeout(this.getMessages.bind(this), 50);
 		this.setState({ user: prompt('What is your username?') })
 		setInterval(this.getMessages.bind(this), 10000);
+		setInterval(this.getShows.bind(this), 10000);
 	}
 
 	render() {
@@ -80,10 +82,11 @@ class App extends Component {
     		</div>
     
     		<div id="sidebar">
-        	<div onClick={this.handleAddClick.bind(this)} id='submitButton'> click here to add a show </div>
+        	<div onClick={this.handleAddClick.bind(this)} id='submitShows'> click here to add a show </div>
+        	<div id="addForm"></div>
     		</div>
     		<div id="footer">
-        	
+      
     		</div>
 			</div>
 			)
