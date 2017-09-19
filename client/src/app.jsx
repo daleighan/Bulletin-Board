@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Axios from 'axios';
-import { Redirect } from 'react-router'
+import { Redirect } from 'react-router';
 
 import ShowList from './ShowList.jsx';
 import AddShow from './AddShow.jsx';
@@ -77,7 +77,7 @@ class App extends Component {
 	logOut() {
 		console.log('test');
 		Axios.get('/logout')
-		.then((response) => this.setState({ redirect: true }))
+		.then((response) => this.setState())
 		.catch((err) => console.log('error', err));
 	}
 
@@ -106,7 +106,9 @@ class App extends Component {
     		<div id="header">
     			<h2>
         		DIY Show Bulletin Board
-        		<div onClick={this.logOut.bind(this)}> LogOut </div>
+        		<div> 
+        			<a href='/login' onClick={this.logOut.bind(this)}> Click to Logout </a>
+        		</div>
     			</h2>
        	</div>
     		<div id="content">
