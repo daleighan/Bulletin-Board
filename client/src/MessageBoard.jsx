@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Message from './Message.jsx'
+import Message from './Message.jsx';
+import SendMessage from './SendMessage.jsx';
 
 class MessagBoard extends Component {
 	constructor(props) {
@@ -7,12 +8,15 @@ class MessagBoard extends Component {
 	}
 
 	render() {
-		const { messages } = this.props;
+		const { messages, sendMessage } = this.props;
 		return (
-			<div> 
-			{messages.map((message) => {
-				return <Message key={message.id} message={message} />
-			})}
+			<div>
+				<div> 
+				{messages.map((message) => {
+					return <Message key={message.id} message={message} />
+				})}
+				</div>
+				<SendMessage sendMessage={sendMessage} />
 			</div>
 			)
 	}	

@@ -10,7 +10,8 @@ class App extends Component {
 		super(props);
 		this.state = {
 			shows: window.exampleShow,
-			messages: window.exampleMessage
+			messages: window.exampleMessage,
+			user: ''
 		}
 	}
 
@@ -33,12 +34,26 @@ class App extends Component {
 		.catch((err) => console.log(err));
 	}
 
+	sendMessage(value, e) {
+		if (value.length > 0) {
+			Axios.post('/messages', {
+				user: this.state.user,
+				message: value
+			})
+			.then((response) => console.log('post successful'))
+			.catch((err) => console.log('error', err));
+			this.getMessages();
+		}
+	}
+
 	componentDidMount() {
 		this.getShows();
 		this.getMessages();
+		this.setState({ user: prompt('What is your username?') })
 	}
 
 	render() {
+		const { submitShow, sendMessage } = this
 		const { shows, messages } = this.state;
 		return (
 			<div id="container">
@@ -46,14 +61,14 @@ class App extends Component {
     			<h2>
         		DIY Show Bulletin Board
     			</h2>
-       		<AddShow submitShow={this.submitShow.bind(this)} /> 
+       		<AddShow submitShow={submitShow.bind(this)} /> 
        	</div>
     		<div id="content">
         	<ShowList shows={shows} />
     		</div>
     
     		<div id="sidebar">
-        	<MessageBoard messages={ messages }/>
+        	<MessageBoard messages={messages} sendMessage={sendMessage.bind(this)}/>
     		</div>
     
     		<div id="footer">
