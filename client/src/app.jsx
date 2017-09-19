@@ -4,6 +4,7 @@ import Axios from 'axios';
 import ShowList from './ShowList.jsx';
 import AddShow from './AddShow.jsx';
 import MessageBoard from './MessageBoard.jsx'
+import Logo from './logo.png'
 
 class App extends Component {
 	constructor(props) {
@@ -105,10 +106,7 @@ class App extends Component {
 			<div id="container">
     		<div id="header">
     			<h2>
-        		DIY Show Bulletin Board
-        		<div> 
-        			<a href='/login' onClick={this.logOut.bind(this)}> Click to Logout </a>
-        		</div>
+        		<img src={Logo} />
     			</h2>
        	</div>
     		<div id="content">
@@ -116,7 +114,8 @@ class App extends Component {
     		</div>
     
     		<div id="sidebar">
-        	<div onClick={this.handleAddClick.bind(this)} id='submitShows'> click here to add a show </div>
+        	<div className="button" onClick={this.handleAddClick.bind(this)} id='submitShows'> add a show </div>
+        	<a href='/login' onClick={this.logOut.bind(this)}>Logout</a>
         	<div id="addForm"></div>
     		</div>
     		<div id="footer">

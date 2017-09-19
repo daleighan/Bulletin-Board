@@ -30,7 +30,7 @@ class ShowEntry extends Component {
 	  const { messages, sendMessage } = this.props;
 		const { date, flyerUrl, location, name, price, id } = this.props.show;
 		return(
-			<div>
+			<div className="show-entry">
 				<div className="show-name">
 					{name}
 				</div>

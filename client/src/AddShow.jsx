@@ -24,7 +24,7 @@ class AddShow extends Component {
 		const { submitShow } = this.props;
 		return (
 			<div>
-			<div>
+			<div className="showadder">
 				<div> Bands: 
 					<input type="text" name="name" onChange={handleChange.bind(this)} /> 
 				</div>
