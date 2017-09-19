@@ -8,7 +8,7 @@ const app = express();
 const port = process.env.Port || 3000;
 
 const restrict = function(req, res, next) {
-  if (req.session.user) {
+  if (req.session.user || req.url === '/login') {
     next();
   } else {
     req.session.error = 'Access denied!';
@@ -22,7 +22,7 @@ app.use(session({
   saveUninitialized: true
 }));
 
-app.use('/page', restrict);
+app.use('/', restrict);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

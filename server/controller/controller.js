@@ -61,7 +61,6 @@ module.exports.getLogin = (req, res) => {
 }
 
 module.exports.postLogin = (req, res) => {
-	// res.json('test');
 	Users.findOne({
 		where: {
 			user: req.body.username,
@@ -69,7 +68,10 @@ module.exports.postLogin = (req, res) => {
 		}
 	}).then((found) => {
 		if(found) {
-			res.redirect('/');
+			req.session.regenerate(function() {
+        req.session.user = req.body.username;
+        res.redirect('/');
+      })
 		} else {
 			res.redirect('/login');
 		}

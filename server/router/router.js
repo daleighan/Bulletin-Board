@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const controller = require('../controller/controller.js');
 
-router.route('/shows').get(controller.getShows)
+router.route('/shows')
+  .get(controller.getShows)
 	.post(controller.postShow)
 	.delete(controller.deleteShow);
 
