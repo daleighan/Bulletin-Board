@@ -11,8 +11,7 @@ const Messages = DB.define('messages', {
 		allowNull: false
 	},
 	showId: {
-		type: Sequelize.INTEGER,
-		allowNull: false
+		type: Sequelize.INTEGER
 	}
 })
 

@@ -35,15 +35,17 @@ class App extends Component {
 	}
 
 	sendMessage(value, e) {
-		if (value.length > 0) {
+		
 			Axios.post('/messages', {
 				user: this.state.user,
-				message: value
+				message: value,
+				showId: 1
 			})
 			.then((response) => console.log('post successful'))
 			.catch((err) => console.log('error', err));
-			this.getMessages();
-		}
+			
+		
+		this.getMessages();
 	}
 
 	componentDidMount() {
