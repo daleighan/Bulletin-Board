@@ -9,11 +9,11 @@ class Message extends Component {
 	render() {
 		const { message, user, createdAt } = this.props.message;
 		return (
-			<div> 
+			<div className="each"> 
 				<div>
 					<span className="user">{user}: </span><span className="message">{message}</span>
 				</div>
-				<Timestamp className="time" time={createdAt} format="full" />
+				<div className="time">-<Timestamp time={createdAt} format="full" /></div>
 			</div>
 			)
 	}

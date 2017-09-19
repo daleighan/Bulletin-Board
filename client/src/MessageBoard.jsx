@@ -10,7 +10,7 @@ class MessagBoard extends Component {
 	render() {
 		const { messages, sendMessage, show } = this.props;
 		return (
-			<div>
+			<div className="messageboard">
 				<div> 
 				{messages.map((message) => {
 					return <Message key={message.id} message={message} />

@@ -37,9 +37,9 @@ class ShowEntry extends Component {
 			
 				<img className="flyer" src={flyerUrl} alt="no flyer available" />
 			
-				<span className="date-location-price">
+				<div className="date-location-price">
 					{date} - {location} - ${price}
-				</span>
+				</div>
 				<MessageBoard messages={this.state.messages} sendMessage={sendMessage} show={id} />
 			</div>
 		)
