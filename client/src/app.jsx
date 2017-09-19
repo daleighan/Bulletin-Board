@@ -46,7 +46,7 @@ class App extends Component {
 
 	submitShow(showObject, e) {
 		Axios.post('/shows', showObject)
-		.then((response) => console.log('post successful'))
+		.then((response) => {})
 		.catch((err) => console.log('error', err));
 		this.getShows();
 		ReactDOM.unmountComponentAtNode(document.getElementById('addForm'));
@@ -73,7 +73,6 @@ class App extends Component {
 	}
 
 	logOut() {
-		console.log('test');
 		Axios.get('/logout')
 		.then((response) => this.setState())
 		.catch((err) => console.log('error', err));
