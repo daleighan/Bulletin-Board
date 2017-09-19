@@ -55,6 +55,22 @@ module.exports.postMessage = (req, res) => {
 	});
 }
 
+module.exports.getLogin = (req, res) => {
+	res.sendFile(__dirname + '/authentication/login.html');
+}
+
+module.exports.postLogin = (req, res) => {
+	res.json('test');
+}
+
+module.exports.getSignup = (req, res) => {
+		res.sendFile(__dirname + '/authentication/signup.html');
+}
+
+module.exports.postSignup = (req, res) => {
+	console.log(req.body);
+	res.json('post');
+}
 
 
 

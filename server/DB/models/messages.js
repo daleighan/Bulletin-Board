@@ -22,9 +22,15 @@ Messages.sync({ force: true }).then(() => {
 		showId: 1
 	}).then(() => {
 			return Messages.create({
-			user: 'Jake',
+			user: 'Zack',
 			message: 'I am!',
-			showId: 2
+			showId: 1
+		}).then(() => {
+			return Messages.create({
+				user: 'Eric',
+				message: "Is anyone trying to part with a ticket for this? I slept on it and now I'm regretting it",
+				showId: 2
+			})
 		});
 	});
 });

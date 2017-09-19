@@ -9,4 +9,12 @@ router.route('/messages')
 	.get(controller.getMessages)
 	.post(controller.postMessage);
 
+router.route('/login')
+	.get(controller.getLogin)
+	.post(controller.postLogin);
+
+router.route('/signup')
+	.get(controller.getSignup)
+	.post(controller.postSignup)
+
 module.exports = router;
