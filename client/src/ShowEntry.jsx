@@ -6,21 +6,22 @@ class ShowEntry extends Component {
 	}
 
 	render() {
+		const { date, flyerUrl, location, name, price, ticketLink } = this.props.show;
 		return(
-		<div>
-			<div className="show-name">
-				Show Name Here
-			</div>
+			<div>
+				<div className="show-name">
+					{name}
+				</div>
 			
-			<img className="flyer" src="" alt="no flyer available" />
+				<img className="flyer" src={flyerUrl} alt="no flyer available" />
 			
-			<span className="date-location-price">
-				Date, location and price here
-			</span>
-			<div className="tickets">
-				Ticket Link Here
+				<span className="date-location-price">
+					{date} - {location} - ${price}
+				</span>
+				<div className="tickets">
+					{ticketLink}
+				</div>
 			</div>
-		</div>
 		)
 	}
 }

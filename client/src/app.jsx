@@ -52,5 +52,16 @@ window.example =
         "ticketLink": "",
         "createdAt": "2017-09-18T22:51:05.160Z",
         "updatedAt": "2017-09-18T22:51:05.160Z"
+    },
+    {
+        "id": 2,
+        "name": "Judge, Youth of Today",
+        "flyerUrl": "http://hardcoreshowflyers.net/wp-content/uploads/2011/10/10041196.jpg",
+        "date": "7/19/2017",
+        "location": "Fort Reno",
+        "price": 7,
+        "ticketLink": "",
+        "createdAt": "2017-09-18T22:51:05.160Z",
+        "updatedAt": "2017-09-18T22:51:05.160Z"
     }
 ]

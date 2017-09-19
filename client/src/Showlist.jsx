@@ -12,7 +12,7 @@ class ShowList extends Component {
 		return (
 			<div>
 				{shows.map((show) => {
-					return <ShowEntry /> 
+					return <ShowEntry key={show.id} show={show} /> 
 				})}
 			</div>
 			)

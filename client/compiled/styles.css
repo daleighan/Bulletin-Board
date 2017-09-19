@@ -1,18 +1,23 @@
 #container {
-    width:960px;
-    margin:20px auto;
+  width:960px;
+  margin:20px auto;
 }
 
 #content {
-    float:left;
-    width:620px;
+  float:left;
+  width:620px;
 }
 
 #sidebar {
-    float:left;
-    width:340px;
+  float:left;
+  width:340px;
 }
 
 #footer {
-    clear:both;
+  clear:both;
+}
+
+.flyer {
+	max-width: 380px;
+	display: block;
 }
