@@ -68,7 +68,7 @@ module.exports.postLogin = (req, res) => {
 		}
 	}).then((found) => {
 		if(found) {
-			req.session.regenerate(function() {
+			req.session.regenerate(() => {
         req.session.user = req.body.username;
         res.redirect('/');
       })
@@ -87,12 +87,16 @@ module.exports.postSignup = (req, res) => {
 		user: req.body.username,
 		password: req.body.password
 	}).then(() => {
-		req.session.regenerate(function() {
+		req.session.regenerate(() => {
       req.session.user = req.body.username;
       res.redirect('/');
     })
 	})
 }
 
+module.exports.logout = (req, res) => {
+	req.session.destroy();
+  res.redirect('/');
+}
 
 
