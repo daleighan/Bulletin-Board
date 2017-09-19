@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
+import Axios from 'axios';
+
 import ShowList from './ShowList.jsx';
 import AddShow from './AddShow.jsx';
-import Axios from 'axios';
+import MessageBoard from './MessageBoard.jsx'
 
 class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			shows: window.exampleShow,
-			messages: window.exampleMessages
+			messages: window.exampleMessage
 		}
 	}
 
@@ -37,23 +39,25 @@ class App extends Component {
 	}
 
 	render() {
-		const { shows } = this.state;
+		const { shows, messages } = this.state;
 		return (
 			<div id="container">
-    		<h2 id="header">
-        	DIY Show Bulletin Board
-    		</h2>
-    
+    		<div id="header">
+    			<h2>
+        		DIY Show Bulletin Board
+    			</h2>
+       		<AddShow submitShow={this.submitShow.bind(this)} /> 
+       	</div>
     		<div id="content">
         	<ShowList shows={shows} />
     		</div>
     
     		<div id="sidebar">
-        	sidebar content here
+        	<MessageBoard messages={ messages }/>
     		</div>
     
     		<div id="footer">
-        	<AddShow submitShow={this.submitShow.bind(this)} /> 
+        	
     		</div>
 			</div>
 			)
@@ -81,7 +85,7 @@ window.exampleShow =
 window.exampleMessage = 
 [
 	{
-		user: "Alex",
-		message: "hello"
+		user: "",
+		message: ""
 	}
 ]
