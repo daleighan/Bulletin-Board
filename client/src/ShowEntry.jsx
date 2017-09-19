@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MessageBoard from './MessageBoard.jsx';
 
 class ShowEntry extends Component {
 	constructor(props) {
@@ -6,6 +7,7 @@ class ShowEntry extends Component {
 	}
 
 	render() {
+	  const { messages, sendMessage } = this.props;
 		const { date, flyerUrl, location, name, price } = this.props.show;
 		return(
 			<div>
@@ -18,6 +20,7 @@ class ShowEntry extends Component {
 				<span className="date-location-price">
 					{date} - {location} - ${price}
 				</span>
+				<MessageBoard messages={messages} sendMessage={sendMessage} />
 			</div>
 		)
 	}

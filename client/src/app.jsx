@@ -65,7 +65,7 @@ class App extends Component {
        		<AddShow submitShow={submitShow.bind(this)} /> 
        	</div>
     		<div id="content">
-        	<ShowList shows={shows} />
+        	<ShowList shows={shows} messages={messages} sendMessage={sendMessage.bind(this)}/>
     		</div>
     
     		<div id="sidebar">

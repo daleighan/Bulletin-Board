@@ -7,11 +7,11 @@ class ShowList extends Component {
 	}
 
 	render() {
-		const { shows } = this.props;
+		const { shows, messages, sendMessage } = this.props;
 		return (
 			<div>
 				{shows.map((show) => {
-					return <ShowEntry key={show.id} show={show} /> 
+					return <ShowEntry key={show.id} show={show} messages={messages} sendMessage={sendMessage} /> 
 				})}
 			</div>
 			)
