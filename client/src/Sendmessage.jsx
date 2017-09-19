@@ -4,12 +4,13 @@ class SendMessage extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			currentMessage: ''
+			currentMessage: '',
+			currentShow: 0
 		}
 	}
 
 	handleChange(e) {
-		this.setState({ currentMessage: e.target.value })
+		this.setState({ currentMessage: e.target.value, currentShow: this.props.show })
 	}
 
 	render() {
@@ -17,7 +18,7 @@ class SendMessage extends Component {
 		return (
 			<div>
 				<textarea defaultValue="enter a message" onChange={this.handleChange.bind(this)} />
-				<div className="messagesend" onClick={sendMessage.bind(null, this.state.currentMessage)}>Send</div>
+				<div className="messagesend" onClick={sendMessage.bind(null, this.state)}>Send</div>
 			</div>
 			)
 		

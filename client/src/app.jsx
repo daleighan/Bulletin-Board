@@ -34,17 +34,19 @@ class App extends Component {
 		.catch((err) => console.log(err));
 	}
 
-	sendMessage(value, e) {
+	sendMessage(values, e) {
 		
 			Axios.post('/messages', {
 				user: this.state.user,
-				message: value,
+				message: values.currentMessage,
+				showId: values.currentShow
 			})
-			.then((response) => console.log('post successful'))
+			.then((response) => console.log('message sent'))
 			.catch((err) => console.log('error', err));
 			
 		
-		this.getMessages();
+		this.getMessages()
+		this.getShows();
 	}
 
 	componentWillMount() {

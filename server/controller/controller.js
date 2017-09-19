@@ -46,7 +46,8 @@ module.exports.postMessage = (req, res) => {
 	console.log(req.body);
 	Messages.create({
 		user: req.body.user,
-		message: req.body.message
+		message: req.body.message,
+		showId: req.body.showId
 	}).then((message) => {
 		res.status(201).json(message);
 	}).catch((err) => {

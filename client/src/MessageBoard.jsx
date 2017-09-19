@@ -16,7 +16,7 @@ class MessagBoard extends Component {
 					return <Message key={message.id} message={message} />
 				})}
 				</div>
-				<SendMessage sendMessage={sendMessage} />
+				<SendMessage sendMessage={sendMessage} show={show} />
 			</div>
 			)
 	}	

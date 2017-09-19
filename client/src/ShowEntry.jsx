@@ -24,7 +24,6 @@ class ShowEntry extends Component {
 
 	componentWillReceiveProps() {
 		this.filterMessages();
-		console.log('test');
 	}
 
 	render() {
