@@ -18,9 +18,9 @@ class ShowEntry extends Component {
 				<span className="date-location-price">
 					{date} - {location} - ${price}
 				</span>
-				<div className="tickets">
-					{ticketLink}
-				</div>
+				<a href={ticketLink} className="tickets">
+					Buy Tickets
+				</a>
 			</div>
 		)
 	}

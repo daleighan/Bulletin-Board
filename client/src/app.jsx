@@ -7,28 +7,33 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			shows: window.example
+			shows: window.exampleShow,
+			messages: window.exampleMessages
 		}
 	}
 
 	getShows() {
 		Axios.get('/shows')
-		.then((response) => {
-			this.setState({ shows: response.data });
-		})
+		.then((response) => this.setState({ shows: response.data }))
 		.catch((err) => console.log(err));
 	}
 
 	submitShow(showObject) {
-		console.log(showObject)
 		Axios.post('/shows', showObject)
 		.then((response) => console.log('post successful'))
 		.catch((err) => console.log('error', err));
 		this.getShows();
 	}
 
+	getMessages() {
+		Axios.get('/messages')
+		.then((response) => this.setState({ messages: response.data }))
+		.catch((err) => console.log(err));
+	}
+
 	componentDidMount() {
 		this.getShows();
+		this.getMessages();
 	}
 
 	render() {
@@ -58,7 +63,7 @@ class App extends Component {
 export default App;
 
 
-window.example =
+window.exampleShow =
 [
     {
         "id": 1,
@@ -70,16 +75,13 @@ window.example =
         "ticketLink": "",
         "createdAt": "2017-09-18T22:51:05.160Z",
         "updatedAt": "2017-09-18T22:51:05.160Z"
-    },
-    {
-        "id": 2,
-        "name": "Judge, Youth of Today",
-        "flyerUrl": "http://hardcoreshowflyers.net/wp-content/uploads/2011/10/10041196.jpg",
-        "date": "7/19/2017",
-        "location": "Fort Reno",
-        "price": 7,
-        "ticketLink": "",
-        "createdAt": "2017-09-18T22:51:05.160Z",
-        "updatedAt": "2017-09-18T22:51:05.160Z"
     }
+]
+
+window.exampleMessage = 
+[
+	{
+		user: "Alex",
+		message: "hello"
+	}
 ]

@@ -18,7 +18,6 @@ class AddShow extends Component {
 		this.setState({
 			[name]: value
 		})
-		console.log(this.state);
 	}
 
 	render() {
@@ -33,8 +32,8 @@ class AddShow extends Component {
 				<div> 
 					Flyer Url: <input type="text" name="flyerUrl" onChange={handleChange.bind(this)} />
 				</div>
-				<div> Date: 
-					<input type="date" name="date" onChange={handleChange.bind(this)} /> 
+				<div> Date (MM/DD/YYYY): 
+					<input type="text" name="date" onChange={handleChange.bind(this)} /> 
 				</div>
 				<div> Location: 
 					<input type="text" name="location" onChange={handleChange.bind(this)} /> 
