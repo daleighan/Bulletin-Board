@@ -8,7 +8,6 @@ class ShowList extends Component {
 
 	render() {
 		const { shows } = this.props;
-		console.log(shows);
 		return (
 			<div>
 				{shows.map((show) => {

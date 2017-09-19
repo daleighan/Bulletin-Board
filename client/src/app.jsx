@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ShowList from './ShowList.jsx';
 import AddShow from './AddShow.jsx';
+import Axios from 'axios';
 
 class App extends Component {
 	constructor(props) {
@@ -10,8 +11,24 @@ class App extends Component {
 		}
 	}
 
+	getShows() {
+		Axios.get('/shows')
+		.then((response) => {
+			this.setState({ shows: response.data });
+		})
+		.catch((err) => console.log(err));
+	}
+
+	submitShow(showObject) {
+		console.log(showObject)
+		Axios.post('/shows', showObject)
+		.then((response) => console.log('post successful'))
+		.catch((err) => console.log('error', err));
+		this.getShows();
+	}
+
 	componentDidMount() {
-		
+		this.getShows();
 	}
 
 	render() {
@@ -31,7 +48,7 @@ class App extends Component {
     		</div>
     
     		<div id="footer">
-        	<AddShow /> 
+        	<AddShow submitShow={this.submitShow.bind(this)} /> 
     		</div>
 			</div>
 			)

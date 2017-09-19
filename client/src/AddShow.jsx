@@ -9,23 +9,48 @@ class AddShow extends Component {
 			location: '',
 			name: '',
 			price: '',
-			ticketlink: ''
+			ticketLink: ''
 		}
 	}
 
+	handleChange(event) {
+		const { name, value } = event.target;
+		this.setState({
+			[name]: value
+		})
+		console.log(this.state);
+	}
+
 	render() {
+		const { handleChange } = this;
+		const { submitShow } = this.props;
 		return (
 			<div>
-				<div> Bands: <input type="text" name="showname" /> </div>
-				<div> Flyer Url: <input type="text" name="flyer" /></div>
-				<div> Date: <input type="date" name="date" /> </div>
-				<div> Location: <input type="text" name="location" /> </div>
-				<div> Price: <input type="text" name="price" /> </div>
-				<div> Link to Buy Tickets: <input type="text" name="ticketlink" /> </div>
-				<div> Click to Submit! </div>
+			<div>
+				<div> Bands: 
+					<input type="text" name="name" onChange={handleChange.bind(this)} /> 
+				</div>
+				<div> 
+					Flyer Url: <input type="text" name="flyerUrl" onChange={handleChange.bind(this)} />
+				</div>
+				<div> Date: 
+					<input type="date" name="date" onChange={handleChange.bind(this)} /> 
+				</div>
+				<div> Location: 
+					<input type="text" name="location" onChange={handleChange.bind(this)} /> 
+				</div>
+				<div> Price: 
+					<input type="text" name="price" onChange={handleChange.bind(this)} /> 
+				</div>
+				<div> Link to Buy Tickets: 
+					<input type="text" name="ticketLink" onChange={handleChange.bind(this)} /> 
+				</div>
+				<div className="submitbutton" onClick={submitShow.bind(null, this.state)}> Click to Submit! </div>
+			</div>
 			</div>
 			)
-	}
+		}
+	
 }
 
 export default AddShow;
