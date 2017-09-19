@@ -84,3 +84,35 @@ h2 {
 	font-size: 14px;
 }
 
+.button {
+	font-size: 18px;
+	border: 2px outset white;
+	border-radius: 4px;
+	width: 150px;
+	text-align: center;
+	padding: 4px 4px 4px 4px;
+	margin: 0 0 10px 0;
+	background: #D6DBE0;
+	color: #2a2b2c;
+	text-decoration: none;
+}
+.button:active {
+	border: 3px inset #e6e9ec;
+}
+a {
+	display: inline-block;
+	font-size: 18px;
+	border: 2px outset white;
+	border-radius: 4px;
+	width: 150px;
+	text-align: center;
+	padding: 4px 4px 4px 4px;
+	margin: 0 0 10px 0;
+	background: #D6DBE0;
+	color: #2a2b2c;
+	text-decoration: none;
+}
+
+a:active {
+  border: 3px inset #e6e9ec;
+}

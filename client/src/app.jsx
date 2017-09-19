@@ -114,8 +114,8 @@ class App extends Component {
     		</div>
     
     		<div id="sidebar">
-        	<div className="button" onClick={this.handleAddClick.bind(this)} id='submitShows'> add a show </div>
-        	<a href='/login' onClick={this.logOut.bind(this)}>Logout</a>
+        	<div className="button" onClick={this.handleAddClick.bind(this)} id='submitShows'>Add a Show</div>
+        	<div><a href='/login' onClick={this.logOut.bind(this)}>Logout</a></div>
         	<div id="addForm"></div>
     		</div>
     		<div id="footer">
