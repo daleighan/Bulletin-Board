@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Timestamp from 'react-timestamp';
 
 class Message extends Component {
 	constructor(props) {
@@ -6,9 +7,14 @@ class Message extends Component {
 	}
 
 	render() {
-		console.log(this.props.message);
+		const { message, user, createdAt } = this.props.message;
 		return (
-			<div>Message Board Entry </div>
+			<div> 
+				<div>
+					<span className="user">{user}: </span><span className="message">{message}</span>
+				</div>
+				<Timestamp className="time" time={createdAt} format="full" />
+			</div>
 			)
 	}
 }

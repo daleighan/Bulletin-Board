@@ -85,6 +85,7 @@ window.exampleShow =
 window.exampleMessage = 
 [
 	{
+		id: 1,
 		user: "",
 		message: ""
 	}
