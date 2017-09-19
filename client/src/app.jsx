@@ -103,6 +103,7 @@ window.exampleMessage =
 	{
 		id: 1,
 		user: "",
-		message: ""
+		message: "",
+		showId: 1
 	}
 ]

@@ -8,7 +8,8 @@ class ShowEntry extends Component {
 
 	render() {
 	  const { messages, sendMessage } = this.props;
-		const { date, flyerUrl, location, name, price } = this.props.show;
+		const { date, flyerUrl, location, name, price, id } = this.props.show;
+		console.log(this.props.show.id);
 		return(
 			<div>
 				<div className="show-name">
@@ -20,7 +21,7 @@ class ShowEntry extends Component {
 				<span className="date-location-price">
 					{date} - {location} - ${price}
 				</span>
-				<MessageBoard messages={messages} sendMessage={sendMessage} />
+				<MessageBoard messages={messages} sendMessage={sendMessage} show={id} />
 			</div>
 		)
 	}

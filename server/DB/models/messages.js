@@ -9,17 +9,23 @@ const Messages = DB.define('messages', {
 	message: {
 		type: Sequelize.STRING,
 		allowNull: false
+	},
+	showId: {
+		type: Sequelize.INTEGER,
+		allowNull: false
 	}
 })
 
 Messages.sync({ force: true }).then(() => {
 	return Messages.create({
 		user: 'Alex',
-		message: 'who is going on Saturday?'
+		message: 'who is going on Saturday?',
+		showId: 1
 	}).then(() => {
 			return Messages.create({
 			user: 'Jake',
-			message: 'I am!'
+			message: 'I am!',
+			showId: 2
 		});
 	});
 });
