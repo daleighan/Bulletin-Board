@@ -6,7 +6,7 @@ class ShowEntry extends Component {
 	}
 
 	render() {
-		const { date, flyerUrl, location, name, price, ticketLink } = this.props.show;
+		const { date, flyerUrl, location, name, price } = this.props.show;
 		return(
 			<div>
 				<div className="show-name">
@@ -18,9 +18,6 @@ class ShowEntry extends Component {
 				<span className="date-location-price">
 					{date} - {location} - ${price}
 				</span>
-				<a href={ticketLink} className="tickets">
-					Buy Tickets
-				</a>
 			</div>
 		)
 	}

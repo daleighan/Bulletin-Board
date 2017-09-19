@@ -33,20 +33,18 @@ const Shows = DB.define('shows', {
 
 Shows.sync({force: true}).then(() => {
 	return Shows.create({
-		name: 'Damnation AD, Battery',
-		flyerUrl: 'http://hardcoreshowflyers.net/wp-content/uploads/2011/10/10041196.jpg',
-		date: '7/11/2017',
-		location: 'Fort Reno',
-		price: 7,
-		ticketLink: ''
+		name: 'Storm of Sedition, Corrupt Vision and Loathing',
+		flyerUrl: 'https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/20615656_1950259008586193_6949531731565472864_o.jpg?oh=6893587829142dfe484e2e652b7e16bf&oe=5A3E2021',
+		date: '9/21/2017',
+		location: 'Programme Skate and Sound',
+		price: 5,
 	}).then(() => {
 		return Shows.create({
-			name: "25 Ta Life, Crown of Thornz, Leeway, Murphy's Law",
-			flyerUrl: 'http://hardcoreshowflyers.net/wp-content/uploads/2007/10/10280702-782x1024.jpg',
-			date: '4/22/2017',
-			location: 'Coney Island High 15 St. Marks',
-			price: 9,
-			ticketLink: ''
+			name: "Blazing Eye, Dead Tribe, Flesh Trade, Headdress, Lost Lands",
+			flyerUrl: 'https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/21368968_478724439161077_1876526001059864101_o.jpg?oh=7fb385f558c7baf465a29437d75af715&oe=5A5EA7F4',
+			date: '9/22/2017',
+			location: '5 Star Bar',
+			price: 5,
 		});
 	});
 });

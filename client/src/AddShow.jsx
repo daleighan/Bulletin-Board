@@ -8,8 +8,7 @@ class AddShow extends Component {
 			flyerUrl: '',
 			location: '',
 			name: '',
-			price: '',
-			ticketLink: ''
+			price: ''
 		}
 	}
 
@@ -40,9 +39,6 @@ class AddShow extends Component {
 				</div>
 				<div> Price: 
 					<input type="text" name="price" onChange={handleChange.bind(this)} /> 
-				</div>
-				<div> Link to Buy Tickets: 
-					<input type="text" name="ticketLink" onChange={handleChange.bind(this)} /> 
 				</div>
 				<div className="submitbutton" onClick={submitShow.bind(null, this.state)}> Click to Submit! </div>
 			</div>
