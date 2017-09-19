@@ -47,9 +47,13 @@ class App extends Component {
 		this.getMessages();
 	}
 
-	componentDidMount() {
+	componentWillMount() {
 		this.getShows();
 		this.getMessages();
+	}
+
+	componentDidMount() {
+		setTimeout(this.getMessages.bind(this), 50);
 		this.setState({ user: prompt('What is your username?') })
 		setInterval(this.getMessages.bind(this), 10000);
 	}

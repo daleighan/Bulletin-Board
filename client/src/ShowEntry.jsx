@@ -19,7 +19,7 @@ class ShowEntry extends Component {
 	}
 
 	componentDidMount() {
-		setTimeout(() => {this.filterMessages}, 1500);
+		this.filterMessages();
 	}
 
 	componentWillReceiveProps() {
