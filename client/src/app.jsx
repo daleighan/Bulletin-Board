@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ShowList from './ShowList.jsx';
+import AddShow from './AddShow.jsx';
 
 class App extends Component {
 	constructor(props) {
@@ -10,16 +11,16 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		//console.log(this.state);
+		
 	}
 
 	render() {
 		const { shows } = this.state;
 		return (
 			<div id="container">
-    		<div id="header">
+    		<h2 id="header">
         	DIY Show Bulletin Board
-    		</div>
+    		</h2>
     
     		<div id="content">
         	<ShowList shows={shows} />
@@ -30,7 +31,7 @@ class App extends Component {
     		</div>
     
     		<div id="footer">
-        	footer content here
+        	<AddShow /> 
     		</div>
 			</div>
 			)
