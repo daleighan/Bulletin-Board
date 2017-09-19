@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import Axios from 'axios';
 
 import ShowList from './ShowList.jsx';
@@ -14,7 +15,7 @@ class App extends Component {
 			user: ''
 		}
 	}
-
+  
 	getShows() {
 		Axios.get('/shows')
 		.then((response) => this.setState({ shows: response.data }))
@@ -35,18 +36,22 @@ class App extends Component {
 	}
 
 	sendMessage(values, e) {
-		
+		if (values.currentMessage.length !== 0){
 			Axios.post('/messages', {
 				user: this.state.user,
 				message: values.currentMessage,
 				showId: values.currentShow
 			})
-			.then((response) => console.log('message sent'))
+			.then((response) => console.log(response))
 			.catch((err) => console.log('error', err));
-			
-		
+		}	
 		this.getMessages()
 		this.getShows();
+	}
+
+	handleAddClick() {
+		console.log('test');
+		ReactDOM.render(<AddShow submitShow={this.submitShow.bind(this)} />, document.getElementById('submitButton'))
 	}
 
 	componentWillMount() {
@@ -69,16 +74,14 @@ class App extends Component {
     			<h2>
         		DIY Show Bulletin Board
     			</h2>
-       		<AddShow submitShow={submitShow.bind(this)} /> 
        	</div>
     		<div id="content">
         	<ShowList shows={shows} messages={messages} sendMessage={sendMessage.bind(this)}/>
     		</div>
     
     		<div id="sidebar">
-        	<MessageBoard messages={messages} sendMessage={sendMessage.bind(this)}/>
+        	<div onClick={this.handleAddClick.bind(this)} id='submitButton'> click here to add a show </div>
     		</div>
-    
     		<div id="footer">
         	
     		</div>
@@ -114,3 +117,5 @@ window.exampleMessage =
 		showId: 1
 	}
 ]
+
+//<MessageBoard messages={messages} sendMessage={sendMessage.bind(this)} show='0' />
