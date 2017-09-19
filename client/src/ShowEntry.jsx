@@ -4,12 +4,30 @@ import MessageBoard from './MessageBoard.jsx';
 class ShowEntry extends Component {
 	constructor(props) {
 		super(props);
+		this.state = {
+
+		}
+	}
+
+	filterMessages() {
+		let currentId = this.props.show.id
+		let belongs = function(obj) {
+			if (obj.showId === currentId) {
+				return true;
+			}
+			return false;
+		}
+		let filtered = this.props.messages.filter(belongs);
+		console.log('filtered', filtered);
+	}
+
+	componentDidMount() {
+		this.filterMessages();
 	}
 
 	render() {
 	  const { messages, sendMessage } = this.props;
 		const { date, flyerUrl, location, name, price, id } = this.props.show;
-		console.log(this.props.show.id);
 		return(
 			<div>
 				<div className="show-name">

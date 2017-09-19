@@ -7,6 +7,7 @@ class ShowList extends Component {
 	}
 
 	render() {
+		console.log('test')
 		const { shows, messages, sendMessage } = this.props;
 		return (
 			<div>

@@ -39,7 +39,6 @@ class App extends Component {
 			Axios.post('/messages', {
 				user: this.state.user,
 				message: value,
-				showId: 1
 			})
 			.then((response) => console.log('post successful'))
 			.catch((err) => console.log('error', err));
@@ -52,7 +51,7 @@ class App extends Component {
 		this.getShows();
 		this.getMessages();
 		this.setState({ user: prompt('What is your username?') })
-		setInterval(this.getMessages.bind(this), 5000);
+		// setInterval(this.getMessages.bind(this), 5000);
 	}
 
 	render() {
