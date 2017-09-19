@@ -1,11 +1,11 @@
 const router = require('express').Router();
 const controller = require('../controller/controller.js');
 
-router.route('/page/shows').get(controller.getShows)
+router.route('/shows').get(controller.getShows)
 	.post(controller.postShow)
 	.delete(controller.deleteShow);
 
-router.route('/page/messages')
+router.route('/messages')
 	.get(controller.getMessages)
 	.post(controller.postMessage);
 

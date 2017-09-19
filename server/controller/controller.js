@@ -61,7 +61,19 @@ module.exports.getLogin = (req, res) => {
 }
 
 module.exports.postLogin = (req, res) => {
-	res.json('test');
+	// res.json('test');
+	Users.findOne({
+		where: {
+			user: req.body.username,
+			password: req.body.password
+		}
+	}).then((found) => {
+		if(found) {
+			res.redirect('/');
+		} else {
+			res.redirect('/login');
+		}
+	})
 }
 
 module.exports.getSignup = (req, res) => {
@@ -69,8 +81,15 @@ module.exports.getSignup = (req, res) => {
 }
 
 module.exports.postSignup = (req, res) => {
-	console.log(req.body);
-	res.json('post');
+	Users.create({
+		user: req.body.username,
+		password: req.body.password
+	}).then(() => {
+		req.session.regenerate(function() {
+      req.session.user = req.body.username;
+      res.redirect('/');
+    })
+	})
 }
 
 
