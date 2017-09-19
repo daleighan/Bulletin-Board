@@ -19,8 +19,30 @@ class App extends Component {
   
 	getShows() {
 		Axios.get('/shows')
-		.then((response) => this.setState({ shows: response.data }))
+		.then((response) => this.setState({ shows: response.data.sort(this.sortShowsByDate) }))
 		.catch((err) => console.log(err));
+	}
+
+	sortShowsByDate(a, b) {
+		let date1 = a.date.split('');
+		for (let i = 0; i < date1.length; i++){
+			if (date1[i] === '/') {
+				date1.splice(i, 1);
+			}
+		}
+		let date2 = b.date.split('');
+		for (let i = 0; i < date2.length; i++){
+			if (date2[i] === '/') {
+				date2.splice(i, 1);
+			}
+		}
+		if (date1.join('') < date2.join('')) {
+			return -1;
+		}
+		if (date1.join('') > date2.join('')) {
+			return 1;
+		}
+		return 0;
 	}
 
 	submitShow(showObject, e) {
