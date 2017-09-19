@@ -1,9 +1,28 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const session = require('express-session');
 const router = require('./router/router.js');
+
 
 const app = express();
 const port = process.env.Port || 3000;
+
+const restrict = function(req, res, next) {
+  if (req.session.user) {
+    next();
+  } else {
+    req.session.error = 'Access denied!';
+    res.redirect('/login');
+  }
+};
+
+app.use(session({
+  secret: 'puppies',
+  resave: false,
+  saveUninitialized: true
+}));
+
+app.use('/page', restrict);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

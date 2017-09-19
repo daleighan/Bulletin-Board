@@ -1,5 +1,6 @@
-const Shows = require('../DB/models/shows.js')
+const Shows = require('../DB/models/shows.js');
 const Messages = require('../DB/models/messages.js');
+const Users = require('../DB/models/users.js');
 
 module.exports.getShows = (req, res) => {
 	Shows.findAll().then((shows) => {
@@ -64,7 +65,7 @@ module.exports.postLogin = (req, res) => {
 }
 
 module.exports.getSignup = (req, res) => {
-		res.sendFile(__dirname + '/authentication/signup.html');
+	res.sendFile(__dirname + '/authentication/signup.html');
 }
 
 module.exports.postSignup = (req, res) => {
