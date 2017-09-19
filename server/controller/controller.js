@@ -96,7 +96,7 @@ module.exports.postSignup = (req, res) => {
 
 module.exports.logout = (req, res) => {
 	req.session.destroy();
-  res.redirect('/');
+  res.status(302).redirect('/');
 }
 
 

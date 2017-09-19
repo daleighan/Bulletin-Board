@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Axios from 'axios';
+import { Redirect } from 'react-router'
 
 import ShowList from './ShowList.jsx';
 import AddShow from './AddShow.jsx';
@@ -13,7 +14,7 @@ class App extends Component {
 			shows: window.exampleShow,
 			messages: window.exampleMessage,
 			user: '',
-			renderChild: false
+			renderChild: false,
 		}
 	}
   
@@ -73,6 +74,13 @@ class App extends Component {
 		this.getShows();
 	}
 
+	logOut() {
+		console.log('test');
+		Axios.get('/logout')
+		.then((response) => this.setState({ redirect: true }))
+		.catch((err) => console.log('error', err));
+	}
+
 	handleAddClick() {
 		ReactDOM.render(<AddShow submitShow={this.submitShow.bind(this)} />, document.getElementById('addForm'))
 	}
@@ -92,11 +100,13 @@ class App extends Component {
 	render() {
 		const { submitShow, sendMessage } = this
 		const { shows, messages } = this.state;
+  
 		return (
 			<div id="container">
     		<div id="header">
     			<h2>
         		DIY Show Bulletin Board
+        		<div onClick={this.logOut.bind(this)}> LogOut </div>
     			</h2>
        	</div>
     		<div id="content">
