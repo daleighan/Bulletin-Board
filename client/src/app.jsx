@@ -51,7 +51,7 @@ class App extends Component {
 		this.getShows();
 		this.getMessages();
 		this.setState({ user: prompt('What is your username?') })
-		// setInterval(this.getMessages.bind(this), 5000);
+		setInterval(this.getMessages.bind(this), 10000);
 	}
 
 	render() {

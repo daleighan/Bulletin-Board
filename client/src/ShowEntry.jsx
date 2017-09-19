@@ -12,17 +12,19 @@ class ShowEntry extends Component {
 	filterMessages() {
 		let currentId = this.props.show.id
 		let belongs = (obj) => {
-			if (obj.showId === currentId) {
-				return true;
-			}
-			return false;
+			return obj.showId === currentId
 		}
 		let filtered = this.props.messages.filter(belongs);
 		this.setState({ messages: filtered});
 	}
 
 	componentDidMount() {
-		this.filterMessages.call(this);
+		setTimeout(() => {this.filterMessages}, 1500);
+	}
+
+	componentWillReceiveProps() {
+		this.filterMessages();
+		console.log('test');
 	}
 
 	render() {
