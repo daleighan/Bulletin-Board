@@ -31,7 +31,7 @@ const Shows = DB.define('shows', {
 	}
 });
 
-Shows.sync().then(() => {
+Shows.sync({force: true}).then(() => {
 	return Shows.create({
 		name: "Blazing Eye, Dead Tribe, Flesh Trade, Headdress, Lost Lands",
 		flyerUrl: 'https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/21368968_478724439161077_1876526001059864101_o.jpg?oh=7fb385f558c7baf465a29437d75af715&oe=5A5EA7F4',

@@ -15,7 +15,7 @@ const Messages = DB.define('messages', {
 	}
 })
 
-Messages.sync().then(() => {
+Messages.sync({force: true}).then(() => {
 	return Messages.create({
 		user: 'Alex',
 		message: 'who is going on Saturday?',
