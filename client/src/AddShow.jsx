@@ -25,22 +25,23 @@ class AddShow extends Component {
 		return (
 			<div>
 			<div className="showadder">
-				<div> Bands: 
+				<div className="formname"> Bands: <br />
 					<input type="text" name="name" onChange={handleChange.bind(this)} /> 
 				</div>
-				<div> 
-					Flyer Url: <input type="text" name="flyerUrl" onChange={handleChange.bind(this)} />
+				<div className="formname"> 
+					Flyer Url: <br />
+					<input type="text" name="flyerUrl" onChange={handleChange.bind(this)} />
 				</div>
-				<div> Date (MM/DD/YYYY): 
+				<div className="formname"> Date (MM/DD/YYYY): <br />
 					<input type="text" name="date" onChange={handleChange.bind(this)} /> 
 				</div>
-				<div> Location: 
+				<div className="formname"> Location: <br />
 					<input type="text" name="location" onChange={handleChange.bind(this)} /> 
 				</div>
-				<div> Price: 
+				<div className="formname"> Price: <br />
 					<input type="text" name="price" onChange={handleChange.bind(this)} /> 
 				</div>
-				<div className="submitbutton" onClick={submitShow.bind(null, this.state)}> Click to Submit! </div>
+				<div className="submitbutton" onClick={submitShow.bind(null, this.state)}> Submit! </div>
 			</div>
 			</div>
 			)

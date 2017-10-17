@@ -41,7 +41,7 @@
     "react-router": "^4.2.0",
     "react-timestamp": "^4.2.1",
     "sequelize": "^4.8.4",
-    "sqlite3": "^3.1.11",
+    "sqlite3": "^3.1.13",
     "url-loader": "^0.5.9"
   }
 }

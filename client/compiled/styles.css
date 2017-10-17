@@ -67,6 +67,13 @@ h2 {
 	border: 1px solid black;
 	border-radius: 5px;
 }
+textarea {
+	width: 360px;
+	height: 50px;
+	border-radius: 5px;
+	color: #2a2b2c;
+	font-size: 16px;
+}
 
 .each {
 	border: 1px solid black;
@@ -94,15 +101,15 @@ h2 {
 	margin: 0 0 10px 0;
 	background: #D6DBE0;
 	color: #2a2b2c;
-	text-decoration: none;
 }
+
 .button:active {
 	border: 3px inset #e6e9ec;
 }
 a {
 	display: inline-block;
 	font-size: 18px;
-	border: 2px outset white;
+	border: 2px outset #dee2e6;
 	border-radius: 4px;
 	width: 150px;
 	text-align: center;
@@ -116,3 +123,33 @@ a {
 a:active {
   border: 3px inset #e6e9ec;
 }
+
+.messagesend, .submitbutton {
+	border: 2px outset #dee2e6;
+	border-radius: 5px;
+	padding: 4px 4px 4px 4px;
+	margin: 6px 0 5px 10px;
+	background: #D6DBE0;
+	width: 60px;
+	text-align: center;
+}
+
+.messagesend:active, .submitbutton:active {
+	border: 3px inset #e6e9ec;
+}
+.submitbutton: {
+	width: 80px;
+}
+
+.formname {
+	display: block;
+}
+
+input {
+	width: 245px;
+	margin: 5px 5px 10px 5px;
+	height: 20px;
+}
+
+
+

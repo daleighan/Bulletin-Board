@@ -8,7 +8,7 @@ const app = express();
 const port = process.env.Port || 3000;
 
 const restrict = function(req, res, next) {
-  if (req.session.user || req.url === '/login') {
+  if (req.session.user || req.url === '/login' || req.url === '/signup') {
     next();
   } else {
     req.session.error = 'Access denied!';

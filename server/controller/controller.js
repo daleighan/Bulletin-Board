@@ -60,6 +60,7 @@ module.exports.getLogin = (req, res) => {
 }
 
 module.exports.postLogin = (req, res) => {
+	console.log(req.body)
 	Users.findOne({
 		where: {
 			user: req.body.username,
