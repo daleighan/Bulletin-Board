@@ -12,7 +12,7 @@ const Users = DB.define('users', {
 	}
 });
 
-Users.sync({ force: true }).then(() => {
+Users.sync().then(() => {
 	return Users.create({
 		user: 'Alex',
 		password: 'Password'

@@ -1,8 +1,10 @@
 const Sequelize = require('sequelize');
+require('dotenv').config()
 
-const DB = new Sequelize('data', 'Alex', '', {
-	dialect: 'sqlite',
-	storage: 'server/DB/data.sqlite'
+const DB = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS, {
+	dialect: 'postgres',
+	host: process.env.DB_HOST,
+	port: process.env.DB_PORT
 });
 
 DB.authenticate()
