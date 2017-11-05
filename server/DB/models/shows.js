@@ -45,7 +45,7 @@ Shows.sync().then(() => {
 		  date: '11/3/2017',
 		  location: 'Los Globos',
 		  price: 20,
-		});
+    }).catch((err) => console.log(err));
 	});
 });
 

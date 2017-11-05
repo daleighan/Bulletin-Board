@@ -15,7 +15,7 @@ const Messages = DB.define('messages', {
 	}
 })
 
-Messages.sync().then(() => {
+Messages.sync({force: true}).then(() => {
 	return Messages.create({
 		user: 'Alex',
 		message: 'who is going on Saturday?',
@@ -30,7 +30,7 @@ Messages.sync().then(() => {
 				user: 'Eric',
 				message: "Is anyone trying to part with a ticket for this? I slept on it and now I'm regretting it",
 				showId: 2
-			})
+      }).catch((err) => console.log(err));
 		});
 	});
 });

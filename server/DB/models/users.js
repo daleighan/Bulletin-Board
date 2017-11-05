@@ -20,7 +20,7 @@ Users.sync().then(() => {
 		Users.create({
 			user: 'Zack',
 			password: 'password'
-		});
+    }).catch((err) => console.log(err));
 	});
 });
 
