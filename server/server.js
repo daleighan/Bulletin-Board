@@ -16,6 +16,12 @@ const restrict = function(req, res, next) {
   }
 };
 
+app.get('*.js', (req, res, next) => {
+  req.url = req.url + '.gz';
+  res.set('Content-Encoding', 'gzip');
+  next();
+});
+
 app.use(session({
   secret: 'puppies',
   resave: false,
